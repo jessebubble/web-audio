@@ -20,9 +20,9 @@ export default function Analyser() {
                     <div className="relative col-span-2 lg:col-start-1 lg:row-start-2">
                         <blockquote className="text-xl font-semibold leading-8 text-white sm:text-2xl sm:leading-9">
                             <p>
-                                <span className="text-sky-600">AudioAnalyser</span> is a built in node that takes an input audio source and performs a Fast Fourier Transform (FFT) on the audio data to obtain frequency domain information. 
+                                <span className="text-sky-600">AudioAnalyser</span> is a built in node that takes an input audio source and performs a Fast Fourier Transform (FFT) on the audio data to obtain frequency domain information
                                 <span className="mt-2 block text-base font-normal">
-                                    This allows you to analyze the intensity or volume of specific frequency ranges in the audio and use the data to visualize the audio or apply audio effects based on specific frequency ranges.
+                                    This allows you to analyze the intensity or volume of specific frequency ranges in the audio and use the data to visualize the audio or apply audio effects based on specific frequency ranges
                                 </span>
                             </p>
                         </blockquote>

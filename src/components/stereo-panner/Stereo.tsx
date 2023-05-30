@@ -4,14 +4,6 @@ import audioFile from '../../assets/GalaxyGroove.mp3'
 export default function Stereo() {
     const audio = new Audio(audioFile)
 
-    const toggleAudio = () => {
-        if (audio.paused) {
-            audio.play()
-        } else {
-            audio.pause()
-        }
-    }
-
     return (
         <> 
         <section className="isolate overflow-hidden bg-white px-6 lg:px-8">
@@ -23,14 +15,14 @@ export default function Stereo() {
                                 <span className="text-sky-600">Stereo Panner</span> accepts an input audio signal and applies panning to adjust the balance between the left and right channels
                                 <span className="mt-2 block text-base font-normal">
                                     By adjusting the panning value dynamically or programmatically, you can create various panning effects, simulate audio movement,
-                                    or position the audio in different locations within the stereo field using the StereoPannerNode in the Web Audio API.
+                                    or position the audio in different locations within the stereo field
                                 </span>
                             </p>
                         </blockquote>
                     </div>
                     <div className="col-end-1 w-16 lg:row-span-4 lg:w-72">
                         <img 
-                            src="https://cdn.sanity.io/images/etrj839y/production/ff75e3e85a6257e83da8f130f1cdaec58f1195f0-1024x1024.jpg"
+                            src="https://a-us.storyblok.com/f/1014535/1024x1024/db80e433f4/web-stereo-hero2.png"
                             alt="stereo panner"
                             className="rounded-xl bg-indigo-50 lg:rounded-3xl"
                         />
@@ -40,7 +32,42 @@ export default function Stereo() {
                         <div className="mt-1 text-sky-600">
                             <PlayPauseIcon 
                                 className="w-8 h-8 hover:text-sky-500" 
-                                onClick={toggleAudio}
+                                onClick={() => audio.paused ? audio.play() : audio.pause()}
+                            />
+                            <input 
+                                type="range"
+                                min="-1"
+                                max="1"
+                                step="0.1"
+                                defaultValue="0"
+                                className="w-full mt-2"
+                                onChange={() => { 
+                                    const panner = new StereoPannerNode(audioContext, { pan: parseFloat((event.target as HTMLInputElement).value) })
+                                    const source = audioContext.createMediaElementSource(audio)
+                                    source.connect(panner).connect(audioContext.destination)
+
+                                    audio.play()
+
+                                    audio.addEventListener('ended', () => {
+                                        audio.currentTime = 0
+                                        audio.play()
+                                    }
+
+                                    )
+
+
+
+                                    
+                                    
+
+
+
+
+                                   
+
+                              
+                                
+                                }} 
                             />
                         </div>
                     </figcaption>

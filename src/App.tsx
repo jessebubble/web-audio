@@ -26,13 +26,16 @@ export default function App() {
                         <blockquote className="text-xl font-semibold leading-8 text-white sm:text-2xl sm:leading-9">
                             <p>
                                 The <span className="text-sky-500">Web Audio API</span> is a powerful tool for working with audio in the browser. It allows you to create and manipulate audio sources, effects, and analyzers in real time
+                                <span className="mt-2 block text-base font-normal">
+                                    This page is built with Vite, TailwindCSS and contains a collection of demos that demonstrate some of the capabilities of the Web Audio API
+                                </span> 
                             </p>
                         </blockquote>
                     </div>
                     <div className="col-end-1 w-16 lg:row-span-4 lg:w-72">
                         <img
                         className="rounded-xl bg-indigo-50 lg:rounded-3xl"
-                        src="https://cdn.sanity.io/images/etrj839y/production/269ad93b7158ac574d9e1936316517e881529821-1024x1024.png"
+                        src="https://a-us.storyblok.com/f/1014535/1024x1024/b7d5537439/web-audio-hero.png"
                         alt="blue aztex boombox"
                         />
                     </div>
