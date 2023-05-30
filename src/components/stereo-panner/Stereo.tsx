@@ -34,7 +34,7 @@ export default function Stereo() {
                                 className="w-8 h-8 hover:text-sky-500" 
                                 onClick={() => audio.paused ? audio.play() : audio.pause()}
                             />
-                            <input 
+                           {/*  <input 
                                 type="range"
                                 min="-1"
                                 max="1"
@@ -51,24 +51,9 @@ export default function Stereo() {
                                     audio.addEventListener('ended', () => {
                                         audio.currentTime = 0
                                         audio.play()
-                                    }
-
-                                    )
-
-
-
-                                    
-                                    
-
-
-
-
-                                   
-
-                              
-                                
+                                    })
                                 }} 
-                            />
+                            /> */}
                         </div>
                     </figcaption>
                 </figure>
